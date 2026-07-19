@@ -8,7 +8,7 @@ export default function CustomHero() {
       {/* Background Image (Antalya Landscape) */}
       <div className={styles.bgImage}>
         <img 
-          src="https://images.unsplash.com/photo-1579979730310-8588523c0421?auto=format&fit=crop&w=1920&q=80" 
+          src="https://images.unsplash.com/photo-1521581171443-46a485590924?auto=format&fit=crop&w=1920&q=80" 
           alt="Antalya" 
           className={styles.rawImg}
         />

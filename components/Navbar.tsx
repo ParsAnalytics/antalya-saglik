@@ -11,6 +11,9 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={styles.topBarInner}>
           <span>ANTALYA'NIN EN GÜVENİLİR SAĞLIK PORTALI</span>
+          <a href="https://akdeniz-saglik-danismanligi.vercel.app" target="_blank" rel="noopener noreferrer" className={styles.topLink}>
+            Ücretsiz Sağlık Danışmanlığı İçin Tıklayın
+          </a>
         </div>
       </div>
 

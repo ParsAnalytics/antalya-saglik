@@ -40,6 +40,20 @@
   justify-content: space-between;
 }
 
+.topLink {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--color-accent-teal);
+  padding: 2px 10px;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.topLink:hover {
+  opacity: 0.9;
+}
+
 .logoWrap {
   display: flex;
   align-items: center;

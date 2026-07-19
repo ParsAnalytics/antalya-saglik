@@ -289,7 +289,7 @@ export async function getAllNews(): Promise<NewsItem[]> {
       description: 'Hastalığına uygun uzmanı bulamayanlar için harika haber! Akdeniz Sağlık Danışmanlığı uzman ekibi, şikayetlerinizi dinleyip sizi şehrinizdeki en iyi ve en doğru uzmana nokta atışı yönlendiriyor. Üstelik tamamen ücretsiz.',
       pubDate: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
       source: 'Akdeniz Sağlık',
-      sourceLabel: 'Sponsorlu İçerik',
+      sourceLabel: 'Özel Haber',
       category: 'Uzman Görüşü',
       categoryColor: 'purple',
       image: 'https://images.unsplash.com/photo-1551076805-e18690c5e561?auto=format&fit=crop&w=800&q=80',

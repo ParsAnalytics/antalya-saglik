@@ -10,7 +10,6 @@ export default function AdBanner() {
       className={styles.banner}
     >
       <div className={styles.content}>
-        <span className={styles.sponsorBadge}>Sponsorlu</span>
         <h3 className={styles.title}>Doğru Tedavi İçin Rehberiniz</h3>
         <p className={styles.desc}>
           Hangi uzmana veya hastaneye gitmeniz gerektiğini bilmiyor musunuz? 

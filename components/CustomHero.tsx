@@ -7,12 +7,10 @@ export default function CustomHero() {
     <section className={styles.heroWrap}>
       {/* Background Image (Antalya Landscape) */}
       <div className={styles.bgImage}>
-        <Image 
+        <img 
           src="https://images.unsplash.com/photo-1579979730310-8588523c0421?auto=format&fit=crop&w=1920&q=80" 
           alt="Antalya" 
-          fill 
-          style={{ objectFit: 'cover' }}
-          priority
+          className={styles.rawImg}
         />
       </div>
 
@@ -37,13 +35,13 @@ export default function CustomHero() {
             {/* Small image cards as seen in the mockup */}
             <div className={styles.cardList}>
               <div className={styles.heroCard}>
-                <Image src="https://images.unsplash.com/photo-1552554792-5eb50f58022d?auto=format&fit=crop&w=300&q=80" alt="Card 1" fill style={{ objectFit: 'cover' }} />
+                <img src="https://images.unsplash.com/photo-1552554792-5eb50f58022d?auto=format&fit=crop&w=300&q=80" alt="Haber 1" className={styles.rawImg} />
               </div>
               <div className={styles.heroCard}>
-                <Image src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e2c?auto=format&fit=crop&w=300&q=80" alt="Card 2" fill style={{ objectFit: 'cover' }} />
+                <img src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e2c?auto=format&fit=crop&w=300&q=80" alt="Haber 2" className={styles.rawImg} />
               </div>
               <div className={styles.heroCard}>
-                <Image src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=300&q=80" alt="Card 3" fill style={{ objectFit: 'cover' }} />
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=300&q=80" alt="Haber 3" className={styles.rawImg} />
               </div>
             </div>
           </div>

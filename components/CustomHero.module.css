@@ -2,9 +2,16 @@
   position: relative;
   width: 100%;
   height: 550px;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to visible so search bar isn't cut if it overflows, wait, if wave overflows we need hidden. Let's keep hidden and add margin */
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px; /* Added margin to prevent overlap with content below */
+}
+
+.rawImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .bgImage {
@@ -111,7 +118,7 @@
 
 .searchBar {
   position: absolute;
-  bottom: -25px; /* Half overlapping out of the hero */
+  bottom: -20px; /* Overlaps out of the hero */
   right: 50px;
   z-index: 10;
   display: flex;

@@ -20,6 +20,22 @@ const NEWS_SOURCES: NewsSource[] = [
     categoryColor: 'blue',
   },
   {
+    name: 'akdenizmanset',
+    label: 'Akdeniz Manşet',
+    url: 'https://www.akdenizmanset.com.tr/rss/saglik',
+    type: 'rss',
+    category: 'Sağlık',
+    categoryColor: 'orange',
+  },
+  {
+    name: 'lidergazete',
+    label: 'Lider Gazete',
+    url: 'https://www.lidergazete.com/rss/saglik',
+    type: 'rss',
+    category: 'Sağlık',
+    categoryColor: 'pink',
+  },
+  {
     name: 'mygazete',
     label: 'My Gazete',
     url: 'https://www.mygazete.com.tr/saglik',
@@ -218,14 +234,29 @@ export async function getAllNews(): Promise<NewsItem[]> {
     return true;
   });
 
+  // Health keyword filter to ensure we only get health-related local news
+  const healthKeywords = ['sağlık', 'hastane', 'doktor', 'tedavi', 'ameliyat', 'hasta', 'tıp', 'ilaç', 'kanser', 'sendrom', 'beslenme', 'diyet', 'hastalık', 'virüs', 'salgın', 'bakanlığı', 'aşı', 'klinik', 'bakım', 'rehabilitasyon'];
+  
+  const filtered = deduped.filter(item => {
+    // If the source itself is strictly a health category, keep it
+    if (item.category.includes('Sağlık') || item.categoryColor !== 'gray') {
+       // Just to be sure, check if it contains ANY health keyword, OR if it's from a verified health RSS
+       const text = (item.title + ' ' + item.description).toLowerCase();
+       const hasKeyword = healthKeywords.some(kw => text.includes(kw));
+       // For this project, since the user wants strictly health news, let's enforce keyword matching on ALL sources to filter out false positives from standard RSS feeds.
+       return hasKeyword || item.source.includes('akdenizhastane'); // University hospital is always relevant
+    }
+    return false;
+  });
+
   // Sort by date
-  deduped.sort((a, b) => {
+  filtered.sort((a, b) => {
     const da = new Date(a.pubDate).getTime();
     const db = new Date(b.pubDate).getTime();
     return db - da;
   });
 
-  return deduped;
+  return filtered;
 }
 
 export async function getNewsByCategory(category: string): Promise<NewsItem[]> {

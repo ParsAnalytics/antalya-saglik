@@ -8,7 +8,7 @@ export default function CustomHero() {
       {/* Background Image (Antalya Landscape) */}
       <div className={styles.bgImage}>
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Antalya_Kaleici_Marina.jpg/1920px-Antalya_Kaleici_Marina.jpg" 
+          src="/antalya-bg.jpg" 
           alt="Antalya Manzarası" 
           className={styles.rawImg}
         />

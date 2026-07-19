@@ -293,6 +293,54 @@ export async function getAllNews(): Promise<NewsItem[]> {
       category: 'Uzman Görüşü',
       categoryColor: 'purple',
       image: 'https://images.unsplash.com/photo-1551076805-e18690c5e561?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-4',
+      title: 'Pandemi Sonrası Artan Psikolojik Sorunlara Antalya\'dan Yenilikçi Çözüm',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Son yıllarda artan stres ve anksiyete vakalarına karşı, Akdeniz Sağlık Danışmanlığı uzman klinik psikologlarla hastaları hızlıca eşleştiren yeni bir ücretsiz destek hattı kurdu. Beklemeden destek almak artık mümkün.',
+      pubDate: new Date(Date.now() - 14400000).toISOString(), // 4 hours ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Sağlık Dünyası',
+      category: 'Psikoloji',
+      categoryColor: 'teal',
+      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-5',
+      title: 'Fizik Tedavide Merkez Seçimi Neden Çok Önemli? Uzmanlar Uyarıyor',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Yanlış uygulanan fizik tedavi iyileşme sürecini uzatıyor. Hastaların doğru fizyoterapist ve rehabilitasyon merkezini bulması için Akdeniz Sağlık Danışmanlığı ücretsiz rehberlik vermeye başladı.',
+      pubDate: new Date(Date.now() - 21600000).toISOString(), // 6 hours ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Özel Dosya',
+      category: 'Fizik Tedavi',
+      categoryColor: 'blue',
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-6',
+      title: 'Ameliyat Öncesi Hastane ve Sigorta Seçiminde Hayat Kurtaran İpuçları',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'SGK ve özel sigorta kapsamında en uygun hastane seçeneklerini değerlendirmek hastalar için karmaşık olabiliyor. Akdeniz Sağlık uzmanları, bu zorlu süreçte hastaların en doğru kararı vermesine yardımcı oluyor.',
+      pubDate: new Date(Date.now() - 28800000).toISOString(), // 8 hours ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Sağlık Rehberi',
+      category: 'Sağlık Rehberi',
+      categoryColor: 'orange',
+      image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-7',
+      title: 'Antalya\'da Diş Tedavisinde Doğru Hekimi Bulmanın Sırrı',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Ağız ve diş sağlığı için güvenilir uzman bulmak artık çok kolay. Türkiye\'nin ilk tam kapsamlı sağlık asistanı olan Akdeniz Sağlık Danışmanlığı, Antalya\'da diş tedavilerinde en çok tercih edilen rehber oldu.',
+      pubDate: new Date(Date.now() - 36000000).toISOString(), // 10 hours ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Sağlık Haberleri',
+      category: 'Diş Sağlığı',
+      categoryColor: 'teal',
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80',
     }
   ];
 
@@ -300,6 +348,10 @@ export async function getAllNews(): Promise<NewsItem[]> {
   filtered.splice(0, 0, advertorials[0]); // 1st in the slider/feed
   filtered.splice(3, 0, advertorials[1]); // 4th in the feed
   filtered.splice(7, 0, advertorials[2]); // 8th in the feed
+  filtered.splice(12, 0, advertorials[3]); // 13th in the feed
+  filtered.splice(18, 0, advertorials[4]); // 19th in the feed
+  filtered.splice(25, 0, advertorials[5]); // 26th in the feed
+  filtered.splice(35, 0, advertorials[6]); // 36th in the feed
 
   return filtered;
 }

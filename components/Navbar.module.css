@@ -3,16 +3,17 @@
   top: 0;
   z-index: 1000;
   background: #ffffff;
-  border-bottom: 4px solid var(--color-accent-teal); /* Red thick border */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.05); /* Soft blue shadow */
 }
 
 .topBar {
-  background: var(--color-accent-teal); /* Red top bar */
-  color: #fff;
-  padding: 4px 0;
-  font-size: 0.75rem;
+  background: var(--color-bg-primary); /* Pastel blue */
+  color: var(--color-accent-teal); /* Deeper blue text */
+  padding: 6px 0;
+  font-size: 0.8rem;
   font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .topBarInner {
@@ -28,12 +29,12 @@
   display: flex;
   gap: 15px;
 }
-.topLinks a:hover { text-decoration: underline; color: #fff; }
+.topLinks a:hover { color: var(--color-text-primary); }
 
 .mainNav {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,16 +47,17 @@
 }
 
 .logoIcon {
-  width: 40px;
-  height: 40px;
-  background: var(--color-accent-teal); /* Red box logo */
+  width: 44px;
+  height: 44px;
+  background: var(--color-accent-teal); /* Blue box */
   color: #fff;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 10px var(--color-accent-blue-glow);
 }
 
 .logoText {
@@ -65,20 +67,18 @@
 
 .logoTitle {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  color: #111;
+  color: var(--color-text-primary);
   line-height: 1;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
+  letter-spacing: -0.03em;
 }
 
 .logoSubtitle {
-  font-size: 0.7rem;
-  color: #666;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  color: var(--color-accent-teal);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   margin-top: 2px;
 }
 
@@ -90,9 +90,8 @@
 
 .link {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: #111;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-text-secondary);
   padding: 8px 0;
   position: relative;
 }
@@ -107,11 +106,11 @@
   bottom: -4px;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: var(--color-accent-teal);
   transform: scaleX(0);
   transition: transform var(--transition-fast);
-  transform-origin: left;
+  transform-origin: center;
 }
 
 .link:hover::after, .activeLink::after {
@@ -120,11 +119,13 @@
 
 .mobileMenuBtn {
   display: none;
-  background: none;
-  border: none;
-  color: #111;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-accent);
+  color: var(--color-accent-teal);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  padding: 8px;
+  padding: 8px 12px;
+  font-weight: 600;
 }
 
 .mobileMenu {
@@ -134,7 +135,6 @@
 @media (max-width: 768px) {
   .navLinks { display: none; }
   .mobileMenuBtn { display: block; }
-  .topBar { display: none; }
   
   .mobileMenu {
     display: block;
@@ -143,22 +143,20 @@
     left: 0;
     right: 0;
     background: #fff;
-    border-bottom: 4px solid var(--color-accent-teal);
-    padding: 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--color-border);
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   }
   
   .mobileLink {
     display: block;
-    padding: 15px 20px;
+    padding: 12px 20px;
     font-size: 1rem;
-    font-weight: 700;
-    color: #111;
-    text-transform: uppercase;
-    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: var(--color-text-secondary);
   }
   .mobileLink:hover {
-    background: #f9f9f9;
+    background: var(--color-bg-primary);
     color: var(--color-accent-teal);
   }
 }

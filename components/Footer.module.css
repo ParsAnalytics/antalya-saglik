@@ -1,9 +1,9 @@
 .footer {
-  background: #111111; /* Classic dark footer */
-  border-top: 5px solid var(--color-accent-teal); /* Red top border */
+  background: #0f172a; /* Slate 900 */
+  border-top: 4px solid var(--color-accent-teal); /* Soft blue border */
   padding: 60px 0 20px;
   margin-top: 60px;
-  color: #fff;
+  color: #f1f5f9;
 }
 
 .inner {
@@ -24,37 +24,39 @@
 }
 
 .logoIcon {
-  width: 40px;
-  height: 40px;
-  background: var(--color-accent-teal); /* Red */
-  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-accent-teal); /* Blue */
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .logoText {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: #ffffff;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .desc {
-  font-size: 0.9rem;
-  color: #999;
+  font-size: 0.95rem;
+  color: #94a3b8; /* Slate 400 */
   line-height: 1.6;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .column h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-accent-purple); /* Very light pastel blue */
   margin-bottom: 20px;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .column ul {
@@ -65,28 +67,28 @@
 }
 
 .column a {
-  font-size: 0.9rem;
-  color: #bbb;
+  font-size: 0.95rem;
+  color: #cbd5e1; /* Slate 300 */
   transition: color var(--transition-fast);
 }
 
 .column a:hover {
-  color: var(--color-accent-teal); /* Red */
+  color: var(--color-accent-blue); /* Light blue */
 }
 
 .bottom {
   max-width: var(--container-max);
-  margin: 40px auto 0;
-  padding: 20px 20px 0;
-  border-top: 1px solid #333;
+  margin: 50px auto 0;
+  padding: 24px 20px 0;
+  border-top: 1px solid #1e293b; /* Slate 800 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
-  color: #666;
+  font-size: 0.85rem;
+  color: #64748b; /* Slate 500 */
 }
 
 @media (max-width: 768px) {
-  .inner { grid-template-columns: 1fr; gap: 30px; }
+  .inner { grid-template-columns: 1fr; gap: 40px; }
   .bottom { flex-direction: column; gap: 15px; text-align: center; }
 }

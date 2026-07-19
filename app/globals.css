@@ -1,37 +1,36 @@
 :root {
-  /* Classic Turkish News Portal Colors */
-  --color-bg-primary: #f4f5f7; /* Light gray background like Hürriyet/Sabah */
+  /* Pastel Blue Theme */
+  --color-bg-primary: #f0f9ff; /* Very soft pastel blue background */
   --color-bg-secondary: #ffffff; /* White for content areas */
-  --color-bg-glass: #ffffff; /* Removing glass, making it solid white */
   
   /* Text */
-  --color-text-primary: #111111; /* Strong black for headlines */
-  --color-text-secondary: #333333;
-  --color-text-muted: #666666;
+  --color-text-primary: #0f172a; /* Slate 900 for high contrast reading */
+  --color-text-secondary: #334155; /* Slate 700 */
+  --color-text-muted: #64748b; /* Slate 500 */
   
-  /* Accents */
-  --color-accent-teal: #cc0000; /* Replaced teal with News Red */
-  --color-accent-blue: #003366; /* Classic Navy Blue */
-  --color-accent-purple: #cc0000; /* Fallback to red */
+  /* Accents - Pastel Blues */
+  --color-accent-teal: #3b82f6; /* Nice soft but visible blue */
+  --color-accent-blue: #60a5fa; /* Lighter pastel blue */
+  --color-accent-purple: #93c5fd; /* Even lighter */
   
-  --color-accent-teal-glow: rgba(204, 0, 0, 0.1);
-  --color-accent-blue-glow: rgba(0, 51, 102, 0.1);
+  --color-accent-teal-glow: rgba(59, 130, 246, 0.1);
+  --color-accent-blue-glow: rgba(96, 165, 250, 0.1);
   
   /* Borders */
-  --color-border: #e0e0e0;
-  --color-border-accent: #cc0000;
+  --color-border: #e2e8f0; /* Soft slate border */
+  --color-border-accent: #bfdbfe; /* Pastel blue border */
   
   /* Typography */
   --font-heading: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   
   /* Metrics */
-  --container-max: 1140px; /* Standard wide container */
+  --container-max: 1140px;
   --header-height: auto;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-pill: 999px;
   
   /* Transitions */
@@ -56,7 +55,7 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-secondary);
   font-family: var(--font-body);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,39 +67,41 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-teal); /* Red on hover */
+  color: var(--color-accent-teal);
 }
 
 /* Utilities */
 .badge {
   display: inline-block;
-  padding: 4px 8px;
-  border-radius: 2px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  color: #fff;
+  color: #1e40af; /* Dark blue text */
+  background: #dbeafe; /* Pastel blue bg */
   letter-spacing: 0.5px;
 }
 
-.badge-teal { background: #cc0000; } /* Actually red */
-.badge-blue { background: #003366; }
-.badge-purple { background: #ff6600; } /* Orange */
-.badge-pink { background: #d81b60; }
-.badge-orange { background: #e65100; }
-.badge-gray { background: #555555; }
+/* Make all badges pastel blue variations */
+.badge-teal { background: #dbeafe; color: #1e40af; }
+.badge-blue { background: #e0f2fe; color: #0369a1; }
+.badge-purple { background: #f0fdf4; color: #166534; }
+.badge-pink { background: #fdf2f8; color: #9d174d; }
+.badge-orange { background: #fff7ed; color: #c2410c; }
+.badge-gray { background: #f1f5f9; color: #334155; }
 
-/* Remove custom scrollbar to look native/standard */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #bbb;
+  background: #cbd5e1;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #94a3b8;
 }

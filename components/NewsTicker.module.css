@@ -1,10 +1,9 @@
 .tickerWrap {
   background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  border-top: 1px solid var(--color-border);
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Space before content starts */
+  margin-bottom: 20px;
 }
 
 .tickerInner {
@@ -16,17 +15,18 @@
 }
 
 .label {
-  background: var(--color-accent-teal); /* Red background */
+  background: var(--color-accent-teal); /* Blue background */
   color: #fff;
   padding: 10px 20px;
   font-family: var(--font-heading);
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   white-space: nowrap;
   position: relative;
   z-index: 2;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
 }
 
 .label::after {
@@ -46,7 +46,8 @@
   height: 40px;
   display: flex;
   align-items: center;
-  background: #f9f9f9;
+  background: var(--color-bg-primary); /* Pastel blue track */
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .content {
@@ -65,7 +66,7 @@
   padding: 0 30px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #111;
+  color: var(--color-text-primary);
   text-decoration: none;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .bullet {
-  color: var(--color-accent-teal);
+  color: var(--color-accent-blue); /* Light blue bullet */
   margin-right: 10px;
   font-size: 1.2rem;
   line-height: 1;

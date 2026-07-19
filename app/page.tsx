@@ -1,6 +1,6 @@
 // app/page.tsx
 import { getAllNews } from '@/lib/newsService';
-import HeroSlider from '@/components/HeroSlider';
+import CustomHero from '@/components/CustomHero';
 import NewsTicker from '@/components/NewsTicker';
 import NewsCard from '@/components/NewsCard';
 import LatestNewsList from '@/components/LatestNewsList';
@@ -29,14 +29,14 @@ export default async function Home() {
       {/* 1. Ticker */}
       <NewsTicker news={tickerNews} />
 
+      {/* Manşet (Custom Full-Width Hero) */}
+      <CustomHero />
+
       {/* 2. Classic Grid Layout (Main Content Left, Sidebar Right) */}
       <div className={styles.portalGrid}>
         
         {/* Main Column */}
         <div className={styles.mainColumn}>
-          {/* Manşet (Hero) */}
-          <HeroSlider news={heroNews} />
-
           {/* Tüm Haberler Grid */}
           <section className={styles.section}>
             <div className={styles.sectionHeader}>

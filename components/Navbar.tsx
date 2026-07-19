@@ -7,13 +7,6 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
-      {/* Top Thin Bar for Breaking/Links */}
-      <div className={styles.topBar}>
-        <div className={styles.topBarInner}>
-          <span>ANTALYA'NIN EN GÜVENİLİR SAĞLIK PORTALI</span>
-        </div>
-      </div>
-
       {/* Main Nav Area */}
       <div className={styles.mainNav}>
         {/* Logo */}

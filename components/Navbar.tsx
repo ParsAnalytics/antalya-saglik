@@ -17,7 +17,6 @@ export default function Navbar() {
         <Link href="/" className={styles.logoWrap}>
           <div className={styles.logoText}>
             <h1 className={styles.logoTitle}>ANTALYA SAĞLIK</h1>
-            <span className={styles.logoSubtitle}>Türkiye'nin En Güvenilir Sağlık Haber Portalı</span>
           </div>
         </Link>
       </div>

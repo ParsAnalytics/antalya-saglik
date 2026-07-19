@@ -4,6 +4,7 @@ import HeroSlider from '@/components/HeroSlider';
 import NewsTicker from '@/components/NewsTicker';
 import NewsCard from '@/components/NewsCard';
 import LatestNewsList from '@/components/LatestNewsList';
+import AdBanner from '@/components/AdBanner';
 import styles from './page.module.css';
 
 export const revalidate = 900; // 15 mins
@@ -54,6 +55,9 @@ export default async function Home() {
 
         {/* Sidebar Column */}
         <aside className={styles.sidebarColumn}>
+          {/* Ad Banner */}
+          <AdBanner />
+          
           {/* Sidebar Widget: Latest News */}
           <LatestNewsList items={sidebarNews} />
           

@@ -256,6 +256,23 @@ export async function getAllNews(): Promise<NewsItem[]> {
     return db - da;
   });
 
+  // Inject advertorial natively
+  const advertorial: NewsItem = {
+    id: 'advertorial-akdeniz-saglik',
+    title: 'Sağlıkta Doğru Yönlendirme Hayat Kurtarıyor: Ücretsiz Danışmanlık Hizmeti Başladı',
+    link: 'https://akdeniz-saglik-danismanligi.vercel.app',
+    description: 'Hastalar için doğru uzmanı ve kurumu bulmak giderek zorlaşıyor. Akdeniz Sağlık Danışmanlığı, ücretsiz rehberlik hizmetiyle hastaların yanında. Doğru tedaviye ulaşmanın en güvenilir yolu.',
+    pubDate: new Date().toISOString(),
+    source: 'Akdeniz Sağlık Danışmanlığı',
+    sourceLabel: 'Sponsorlu İçerik',
+    category: 'Sağlık Rehberi',
+    categoryColor: 'teal',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+  };
+
+  // Insert advertorial at index 2 so it appears prominent but natural
+  filtered.splice(2, 0, advertorial);
+
   return filtered;
 }
 

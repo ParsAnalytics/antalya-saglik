@@ -8,8 +8,8 @@ export default function CustomHero() {
       {/* Background Image (Antalya Landscape) */}
       <div className={styles.bgImage}>
         <img 
-          src="https://images.unsplash.com/photo-1521581171443-46a485590924?auto=format&fit=crop&w=1920&q=80" 
-          alt="Antalya" 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Antalya_Kaleici_Marina.jpg/1920px-Antalya_Kaleici_Marina.jpg" 
+          alt="Antalya Manzarası" 
           className={styles.rawImg}
         />
       </div>
@@ -23,26 +23,13 @@ export default function CustomHero() {
             <p className={styles.heroSubtitle}>Antalya'nın Özel Sağlık Platformu: Güncel Haberler, Uzman Görüşleri, Şehir Sağlık Rehberi</p>
           </div>
 
-          {/* Right Links & Cards */}
+          {/* Right Links */}
           <div className={styles.rightContent}>
             <div className={styles.linkList}>
               <Link href="#" className={styles.heroLink}>GÜNCEL HABERLER</Link>
               <Link href="#" className={styles.heroLink}>DOKTOR REHBERİ</Link>
               <Link href="#" className={styles.heroLink}>SAĞLIK TURİZMİ</Link>
               <Link href="#" className={styles.heroLink}>RÖPORTAJLAR</Link>
-            </div>
-            
-            {/* Small image cards as seen in the mockup */}
-            <div className={styles.cardList}>
-              <div className={styles.heroCard}>
-                <img src="https://images.unsplash.com/photo-1552554792-5eb50f58022d?auto=format&fit=crop&w=300&q=80" alt="Haber 1" className={styles.rawImg} />
-              </div>
-              <div className={styles.heroCard}>
-                <img src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e2c?auto=format&fit=crop&w=300&q=80" alt="Haber 2" className={styles.rawImg} />
-              </div>
-              <div className={styles.heroCard}>
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=300&q=80" alt="Haber 3" className={styles.rawImg} />
-              </div>
             </div>
           </div>
         </div>

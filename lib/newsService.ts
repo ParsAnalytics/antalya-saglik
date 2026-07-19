@@ -257,21 +257,49 @@ export async function getAllNews(): Promise<NewsItem[]> {
   });
 
   // Inject advertorial natively
-  const advertorial: NewsItem = {
-    id: 'advertorial-akdeniz-saglik',
-    title: 'Sağlıkta Doğru Yönlendirme Hayat Kurtarıyor: Ücretsiz Danışmanlık Hizmeti Başladı',
-    link: 'https://akdeniz-saglik-danismanligi.vercel.app',
-    description: 'Hastalar için doğru uzmanı ve kurumu bulmak giderek zorlaşıyor. Akdeniz Sağlık Danışmanlığı, ücretsiz rehberlik hizmetiyle hastaların yanında. Doğru tedaviye ulaşmanın en güvenilir yolu.',
-    pubDate: new Date().toISOString(),
-    source: 'Akdeniz Sağlık Danışmanlığı',
-    sourceLabel: 'Sponsorlu İçerik',
-    category: 'Sağlık Rehberi',
-    categoryColor: 'teal',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
-  };
+  const advertorials: NewsItem[] = [
+    {
+      id: 'advertorial-akdeniz-saglik-1',
+      title: 'Sağlıkta Doğru Yönlendirme Hayat Kurtarıyor: Ücretsiz Danışmanlık Hizmeti Başladı',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app',
+      description: 'Hastalar için doğru uzmanı ve kurumu bulmak giderek zorlaşıyor. Akdeniz Sağlık Danışmanlığı, ücretsiz rehberlik hizmetiyle hastaların yanında. Doğru tedaviye ulaşmanın en güvenilir yolu.',
+      pubDate: new Date().toISOString(),
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Özel Haber',
+      category: 'Sağlık Rehberi',
+      categoryColor: 'teal',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-2',
+      title: 'Antalya\'da Evde Bakım Hizmetlerinde Akdeniz Sağlık Danışmanlığı Fark Yaratıyor',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#home-health',
+      description: 'Hastaneye gitmekte zorlanan hastalar için evde doktor, hemşire ve tahlil hizmetleri artık çok kolay. Akdeniz Sağlık Danışmanlığı, Antalya bölgesinde %100 memnuniyet garantisiyle evde sağlık hizmetlerini organize ediyor.',
+      pubDate: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Sağlık Dünyası',
+      category: 'Evde Bakım',
+      categoryColor: 'blue',
+      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'advertorial-akdeniz-saglik-3',
+      title: 'Yanlış Doktora Gitmek Tarih Oluyor: "Sağlık Koçluğu" Sistemi Türkiye\'de Hızla Yayılıyor',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Hastalığına uygun uzmanı bulamayanlar için harika haber! Akdeniz Sağlık Danışmanlığı uzman ekibi, şikayetlerinizi dinleyip sizi şehrinizdeki en iyi ve en doğru uzmana nokta atışı yönlendiriyor. Üstelik tamamen ücretsiz.',
+      pubDate: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
+      source: 'Akdeniz Sağlık',
+      sourceLabel: 'Sponsorlu İçerik',
+      category: 'Uzman Görüşü',
+      categoryColor: 'purple',
+      image: 'https://images.unsplash.com/photo-1551076805-e18690c5e561?auto=format&fit=crop&w=800&q=80',
+    }
+  ];
 
-  // Insert advertorial at index 2 so it appears prominent but natural
-  filtered.splice(2, 0, advertorial);
+  // Insert advertorials at strategic positions so they appear prominent but natural
+  filtered.splice(0, 0, advertorials[0]); // 1st in the slider/feed
+  filtered.splice(3, 0, advertorials[1]); // 4th in the feed
+  filtered.splice(7, 0, advertorials[2]); // 8th in the feed
 
   return filtered;
 }

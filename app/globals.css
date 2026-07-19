@@ -1,118 +1,106 @@
-/* ================================================================
-   AntalyaSağlık — Premium Medical Dark Luxe Design System
-   ================================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
-
 :root {
-  --color-bg-primary: #070c18;
-  --color-bg-secondary: #0d1525;
-  --color-bg-card: #111827;
-  --color-bg-glass: rgba(17, 24, 39, 0.7);
-  --color-accent-teal: #00d4b8;
-  --color-accent-teal-dim: #00b89e;
-  --color-accent-teal-glow: rgba(0, 212, 184, 0.2);
-  --color-accent-blue: #3b82f6;
-  --color-accent-purple: #8b5cf6;
-  --color-accent-red: #ef4444;
-  --color-accent-orange: #f97316;
-  --color-accent-gold: #fbbf24;
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
-  --color-text-accent: #00d4b8;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-accent: rgba(0, 212, 184, 0.3);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  /* Classic Turkish News Portal Colors */
+  --color-bg-primary: #f4f5f7; /* Light gray background like Hürriyet/Sabah */
+  --color-bg-secondary: #ffffff; /* White for content areas */
+  --color-bg-glass: #ffffff; /* Removing glass, making it solid white */
+  
+  /* Text */
+  --color-text-primary: #111111; /* Strong black for headlines */
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  
+  /* Accents */
+  --color-accent-teal: #cc0000; /* Replaced teal with News Red */
+  --color-accent-blue: #003366; /* Classic Navy Blue */
+  --color-accent-purple: #cc0000; /* Fallback to red */
+  
+  --color-accent-teal-glow: rgba(204, 0, 0, 0.1);
+  --color-accent-blue-glow: rgba(0, 51, 102, 0.1);
+  
+  /* Borders */
+  --color-border: #e0e0e0;
+  --color-border-accent: #cc0000;
+  
+  /* Typography */
+  --font-heading: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Metrics */
+  --container-max: 1140px; /* Standard wide container */
+  --header-height: auto;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+  
+  /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
   --transition-slow: 0.4s ease;
-  --container-max: 1320px;
-  --navbar-height: 70px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: var(--font-body);
   background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  line-height: 1.6;
-  min-height: 100vh;
-  overflow-x: hidden;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
-ul, ol { list-style: none; }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg-secondary); }
-::-webkit-scrollbar-thumb { background: var(--color-accent-teal-dim); border-radius: 3px; }
-
-.container { max-width: var(--container-max); margin: 0 auto; padding: 0 20px; }
-.section { padding: 60px 0; }
-
-.heading-display { font-family: var(--font-heading); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
-.heading-section { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; }
-
-.text-gradient {
-  background: linear-gradient(135deg, #00d4b8 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-.glass-card {
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+a:hover {
+  color: var(--color-accent-teal); /* Red on hover */
 }
 
+/* Utilities */
 .badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 9px;
-  border-radius: 100px;
-  font-size: 0.7rem;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
-.badge-teal   { background: rgba(0,212,184,0.12); color: var(--color-accent-teal); border: 1px solid rgba(0,212,184,0.2); }
-.badge-red    { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
-.badge-blue   { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
-.badge-purple { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.2); }
-.badge-orange { background: rgba(249,115,22,0.12); color: #fb923c; border: 1px solid rgba(249,115,22,0.2); }
+.badge-teal { background: #cc0000; } /* Actually red */
+.badge-blue { background: #003366; }
+.badge-purple { background: #ff6600; } /* Orange */
+.badge-pink { background: #d81b60; }
+.badge-orange { background: #e65100; }
+.badge-gray { background: #555555; }
 
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; gap: 16px; }
-.section-header-left { display: flex; align-items: center; gap: 12px; }
-.section-accent-bar { width: 4px; height: 32px; border-radius: 2px; background: linear-gradient(180deg, var(--color-accent-teal) 0%, var(--color-accent-blue) 100%); flex-shrink: 0; }
-
-.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--color-border), transparent); margin: 40px 0; }
-
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.85); } }
-@keyframes ticker-scroll { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-.animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; }
-
-@media (max-width: 768px) {
-  :root { --navbar-height: 60px; }
-  .section { padding: 40px 0; }
-  .container { padding: 0 16px; }
-  .section-header { flex-direction: column; align-items: flex-start; }
+/* Remove custom scrollbar to look native/standard */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }

@@ -9,6 +9,7 @@ interface Props {
 export default function LatestNewsList({ items }: Props) {
   return (
     <div className={styles.latestList}>
+      <div className={styles.latestHeader}>SON HABERLER</div>
       {items.map((item) => (
         <a
           key={item.id}
@@ -27,18 +28,14 @@ export default function LatestNewsList({ items }: Props) {
             </div>
           )}
           <div className={styles.latestBody}>
+            <h3 className={styles.latestTitle}>{item.title}</h3>
             <div className={styles.latestMeta}>
               <span className={`badge badge-${item.categoryColor}`}>{item.category}</span>
               <span className={styles.latestDate}>
-                {new Date(item.pubDate).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' })}
+                {new Date(item.pubDate).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })}
               </span>
             </div>
-            <h3 className={styles.latestTitle}>{item.title}</h3>
-            <p className={styles.latestSource}>{item.sourceLabel}</p>
           </div>
-          <svg className={styles.latestArrow} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
         </a>
       ))}
     </div>

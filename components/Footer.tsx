@@ -1,87 +1,44 @@
-// components/Footer.tsx
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
-const SOURCES = [
-  { label: 'Haber Antalya', href: 'https://www.haberantalya.com/rss/category/saglik' },
-  { label: 'Antalya Yaşam', href: 'https://antalyayasam.com.tr/rss/saglik' },
-  { label: 'My Gazete', href: 'https://www.mygazete.com.tr/saglik' },
-  { label: 'Akdeniz Üniversitesi Hastanesi', href: 'https://hastane.akdeniz.edu.tr/' },
-  { label: 'Antalya Eğitim Araştırma Hastanesi', href: 'https://antalyaeah.saglik.gov.tr/' },
-];
-
-const CATEGORIES = [
-  { label: 'Evde Bakım', href: '/kategori/evde-bakim' },
-  { label: 'Hastane Haberleri', href: '/kategori/hastane' },
-  { label: 'Üniversite Tıbbı', href: '/kategori/universite' },
-  { label: 'Genel Sağlık', href: '/kategori/saglik' },
-];
-
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
-      <div className={styles.glow} />
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          {/* Brand */}
-          <div className={styles.brand}>
-            <div className={styles.logo}>
-              <span>🏥</span>
-              <span>Antalya<span className={styles.accent}>Sağlık</span></span>
-            </div>
-            <p className={styles.tagline}>
-              Antalya&apos;nın sağlık, evde bakım ve tıp haberlerini anlık takip edin. Akdeniz kenti için güvenilir sağlık habercisi.
-            </p>
-            <div className={styles.badges}>
-              <span className={styles.statBadge}>📍 Antalya</span>
-              <span className={styles.statBadge}>🏥 5 Kaynak</span>
-              <span className={styles.statBadge}>🔄 15dk Güncelleme</span>
-            </div>
+      <div className={styles.inner}>
+        <div className={styles.brand}>
+          <div className={styles.logo}>
+            <div className={styles.logoIcon}>A</div>
+            <div className={styles.logoText}>ANTALYA SAĞLIK</div>
           </div>
-
-          {/* Kategoriler */}
-          <div className={styles.col}>
-            <h3 className={styles.colTitle}>Kategoriler</h3>
-            <ul className={styles.links}>
-              {CATEGORIES.map((c) => (
-                <li key={c.href}>
-                  <Link href={c.href} className={styles.link}>
-                    <span className={styles.linkArrow}>›</span>
-                    {c.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Kaynaklar */}
-          <div className={styles.col}>
-            <h3 className={styles.colTitle}>Haber Kaynakları</h3>
-            <ul className={styles.links}>
-              {SOURCES.map((s) => (
-                <li key={s.href}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <span className={styles.linkArrow}>›</span>
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className={styles.divider} />
-
-        <div className={styles.bottom}>
-          <p className={styles.copyright}>
-            © {year} AntalyaSağlık — Tüm haklar saklıdır.
-          </p>
-          <p className={styles.disclaimer}>
-            Bu site bağımsız bir haber toplayıcısıdır. İçerikler kaynak sitelerden çekilmektedir.
+          <p className={styles.desc}>
+            Antalya'nın en güncel sağlık, hastane ve tıp haberleri portalı. Kesintisiz haber takibi.
           </p>
         </div>
+
+        <div className={styles.column}>
+          <h3>Kategoriler</h3>
+          <ul>
+            <li><Link href="/kategori/evde-bakim">Evde Bakım</Link></li>
+            <li><Link href="/kategori/hastane">Hastane Haberleri</Link></li>
+            <li><Link href="/kategori/universite">Üniversite Tıbbı</Link></li>
+            <li><Link href="/kategori/saglik">Genel Sağlık</Link></li>
+          </ul>
+        </div>
+
+        <div className={styles.column}>
+          <h3>Kurumsal</h3>
+          <ul>
+            <li><Link href="#">Hakkımızda</Link></li>
+            <li><Link href="#">Künye</Link></li>
+            <li><Link href="#">İletişim</Link></li>
+            <li><Link href="#">Gizlilik Politikası</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className={styles.bottom}>
+        <div>&copy; {new Date().getFullYear()} Antalya Sağlık Haberleri. Tüm hakları saklıdır.</div>
+        <div>Haberler: HaberAntalya, AntalyaYaşam, MyGazete</div>
       </div>
     </footer>
   );

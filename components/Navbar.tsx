@@ -1,64 +1,60 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
+  { href: '/', label: 'Gündem' },
+  { href: '/kategori/saglik', label: 'Sağlık' },
   { href: '/kategori/evde-bakim', label: 'Evde Bakım' },
   { href: '/kategori/hastane', label: 'Hastane' },
-  { href: '/kategori/universite', label: 'Üniversite Tıbbı' },
-  { href: '/kategori/saglik', label: 'Genel Sağlık' },
+  { href: '/kategori/universite', label: 'Üniversite' },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.inner}>
+    <header className={styles.header}>
+      {/* Top Thin Bar for Breaking/Links */}
+      <div className={styles.topBar}>
+        <div className={styles.topBarInner}>
+          <span>ANTALYA'NIN EN GÜVENİLİR SAĞLIK PORTALI</span>
+          <div className={styles.topLinks}>
+            <Link href="#">Künye</Link>
+            <Link href="#">İletişim</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Nav Area */}
+      <div className={styles.mainNav}>
         {/* Logo */}
-        <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🏥</span>
-          <span className={styles.logoText}>
-            Antalya<span className={styles.logoAccent}>Sağlık</span>
-          </span>
+        <Link href="/" className={styles.logoWrap}>
+          <div className={styles.logoIcon}>A</div>
+          <div className={styles.logoText}>
+            <span className={styles.logoTitle}>ANTALYA SAĞLIK</span>
+            <span className={styles.logoSubtitle}>Haber Portalı</span>
+          </div>
         </Link>
 
         {/* Desktop Links */}
-        <ul className={styles.navLinks}>
+        <nav className={styles.navLinks}>
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className={styles.navLink}>
-                {link.label}
-              </Link>
-            </li>
+            <Link key={link.href} href={link.href} className={styles.link}>
+              {link.label}
+            </Link>
           ))}
-        </ul>
+        </nav>
 
-        {/* Live Badge + Hamburger */}
-        <div className={styles.navRight}>
-          <div className={styles.liveBadge}>
-            <span className={styles.liveDot} />
-            CANLI
-          </div>
-          <button
-            className={styles.hamburger}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menü"
-          >
-            <span className={menuOpen ? styles.barOpen : styles.bar} />
-            <span className={menuOpen ? styles.barOpenMid : styles.bar} />
-            <span className={menuOpen ? styles.barOpenLast : styles.bar} />
-          </button>
-        </div>
+        {/* Mobile Menu Button */}
+        <button
+          className={styles.mobileMenuBtn}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menü"
+        >
+          ☰ MENÜ
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -76,6 +72,6 @@ export default function Navbar() {
           ))}
         </div>
       )}
-    </nav>
+    </header>
   );
 }

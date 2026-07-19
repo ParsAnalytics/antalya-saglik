@@ -1,30 +1,30 @@
 'use client';
+import { NewsItem } from '@/lib/newsService';
+import Link from 'next/link';
 import styles from './NewsTicker.module.css';
 
-interface Props {
-  items: string[];
-}
-
-export default function NewsTicker({ items }: Props) {
-  if (!items.length) return null;
-
-  // Duplicate for seamless scroll
-  const repeated = [...items, ...items];
+export default function NewsTicker({ news }: { news: NewsItem[] }) {
+  if (!news || news.length === 0) return null;
 
   return (
-    <div className={styles.ticker}>
-      <div className={styles.label}>
-        <span className={styles.dot} />
-        SON DAKİKA
-      </div>
-      <div className={styles.track}>
-        <div className={styles.inner}>
-          {repeated.map((item, i) => (
-            <span key={i} className={styles.item}>
-              <span className={styles.bullet}>◆</span>
-              {item}
-            </span>
-          ))}
+    <div className={styles.tickerWrap}>
+      <div className={styles.tickerInner}>
+        <div className={styles.label}>SON DAKİKA</div>
+        <div className={styles.track}>
+          <div className={styles.content}>
+            {news.map((item, index) => (
+              <a
+                key={`ticker-${item.id}-${index}`}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.tickerItem}
+              >
+                <span className={styles.bullet}>•</span>
+                {item.title}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

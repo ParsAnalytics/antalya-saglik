@@ -1,33 +1,45 @@
 .latestList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+
+.latestHeader {
+  background: var(--color-bg-primary);
+  border-bottom: 2px solid var(--color-accent-teal); /* Red accent line */
+  padding: 12px 15px;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  text-transform: uppercase;
 }
 
 .latestItem {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-  background: var(--color-bg-glass);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px dotted var(--color-border);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast);
+}
+
+.latestItem:last-child {
+  border-bottom: none;
 }
 
 .latestItem:hover {
-  border-color: var(--color-border-accent);
-  background: rgba(0,212,184,0.04);
+  background: #fafafa;
 }
 
 .latestThumb {
-  width: 80px;
-  height: 60px;
-  border-radius: var(--radius-sm);
+  width: 90px;
+  height: 65px;
   overflow: hidden;
   flex-shrink: 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
 }
 
 .latestThumb img {
@@ -36,46 +48,35 @@
   object-fit: cover;
 }
 
-.latestBody { flex: 1; min-width: 0; }
-
-.latestMeta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.latestDate {
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
+.latestBody {
+  flex: 1;
+  min-width: 0;
 }
 
 .latestTitle {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--color-text-primary);
-  line-height: 1.4;
-  transition: color var(--transition-fast);
+  line-height: 1.3;
+  margin-bottom: 5px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.latestItem:hover .latestTitle { color: var(--color-accent-teal); }
-
-.latestSource {
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  margin-top: 4px;
-}
-
-.latestArrow {
-  color: var(--color-text-muted);
-  flex-shrink: 0;
-  transition: all var(--transition-fast);
-}
-.latestItem:hover .latestArrow {
+.latestItem:hover .latestTitle {
   color: var(--color-accent-teal);
-  transform: translateX(3px);
+}
+
+.latestMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.latestDate {
+  font-weight: 600;
 }

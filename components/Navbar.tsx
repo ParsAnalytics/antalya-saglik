@@ -7,14 +7,17 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
+      {/* Background Image & Overlay */}
+      <div className={styles.headerBg} />
+      <div className={styles.headerOverlay} />
+      
       {/* Main Nav Area */}
       <div className={styles.mainNav}>
-        {/* Logo */}
+        {/* Masthead Logo */}
         <Link href="/" className={styles.logoWrap}>
-          <div className={styles.logoIcon}>A</div>
           <div className={styles.logoText}>
-            <span className={styles.logoTitle}>ANTALYA SAĞLIK</span>
-            <span className={styles.logoSubtitle}>Haber Portalı</span>
+            <h1 className={styles.logoTitle}>ANTALYA SAĞLIK</h1>
+            <span className={styles.logoSubtitle}>Türkiye'nin En Güvenilir Sağlık Haber Portalı</span>
           </div>
         </Link>
       </div>

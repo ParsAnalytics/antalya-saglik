@@ -1,10 +1,25 @@
 .header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
-  background: var(--color-text-primary); /* Deep Slate 900 */
-  border-bottom: 4px solid var(--color-accent-teal); /* Royal Blue accent */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--color-accent-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: var(--color-text-primary);
+}
+
+.headerBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2000&q=80'); /* Abstract medical/tech blue lines */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.headerOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.95) 100%);
+  z-index: 1;
 }
 
 .topBar {
@@ -33,12 +48,15 @@
 .topLinks a:hover { color: var(--color-text-primary); }
 
 .mainNav {
+  position: relative;
+  z-index: 2;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 }
 
 .topLink {
@@ -58,41 +76,41 @@
 .logoWrap {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform var(--transition-fast);
 }
 
-.logoIcon {
-  background: var(--color-accent-teal);
-  color: white;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 900;
-  border-radius: var(--radius-sm);
+.logoWrap:hover {
+  transform: scale(1.02);
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .logoTitle {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 900;
   color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  font-family: var(--font-heading);
 }
 
 .logoSubtitle {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-accent-blue);
-  letter-spacing: 1px;
+  color: #93c5fd; /* Soft blue */
+  letter-spacing: 2px;
   text-transform: uppercase;
+  margin-top: 6px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 .navLinks {

@@ -61,19 +61,6 @@ export default async function Home() {
           {/* Sidebar Widget: Latest News */}
           <LatestNewsList items={sidebarNews} />
           
-          {/* Sidebar Widget: Stats */}
-          <div className={styles.statsBar}>
-            <div className={styles.statsInner}>
-              <div className={styles.statItem}>
-                <div className={styles.statValue}>{allNews.length}</div>
-                <div className={styles.statLabel}>Günlük Haber</div>
-              </div>
-              <div className={styles.statItem}>
-                <div className={styles.statValue}>4</div>
-                <div className={styles.statLabel}>Haber Kaynağı</div>
-              </div>
-            </div>
-          </div>
         </aside>
 
       </div>

@@ -30,10 +30,10 @@ export default function Navbar() {
         <nav className={styles.navLinks}>
           <Link href="/" className={styles.navLink}>ANA SAYFA</Link>
           <div className={styles.dropdown}>
-            <span className={styles.navLink}>HABERLER ▾</span>
+            <span className={styles.navLink}>HABERLER</span>
           </div>
           <div className={styles.dropdown}>
-            <span className={styles.navLink}>KATEGORİLER ▾</span>
+            <span className={styles.navLink}>KATEGORİLER</span>
           </div>
           <Link href="#" className={styles.navLink}>İLETİŞİM</Link>
         </nav>

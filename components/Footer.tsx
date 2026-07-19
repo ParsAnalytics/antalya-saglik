@@ -16,12 +16,9 @@ export default function Footer() {
         </div>
 
         <div className={styles.column}>
-          <h3>Kategoriler</h3>
+          <h3>Hızlı Menü</h3>
           <ul>
-            <li><Link href="/kategori/evde-bakim">Evde Bakım</Link></li>
-            <li><Link href="/kategori/hastane">Hastane Haberleri</Link></li>
-            <li><Link href="/kategori/universite">Üniversite Tıbbı</Link></li>
-            <li><Link href="/kategori/saglik">Genel Sağlık</Link></li>
+            <li><Link href="/">Tüm Haberler</Link></li>
           </ul>
         </div>
 

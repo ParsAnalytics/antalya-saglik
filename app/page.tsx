@@ -11,16 +11,22 @@ export const revalidate = 900; // 15 mins
 export default async function Home() {
   const allNews = await getAllNews();
 
-  const breakingNews = allNews.filter(n => n.category.includes('Hastane') || n.title.includes('Sağlık'));
+  // 10 items for the hero slider
   const heroNews = allNews.slice(0, 10);
-  const latestNews = allNews.slice(10, 20); // For the sidebar
-  const gridNews = allNews.slice(10, 16); // For the main grid
-  const tipNews = allNews.filter(n => n.category.includes('Bakım') || n.category.includes('Üniversite'));
+  
+  // Next 10 items for the sidebar "Son Haberler"
+  const sidebarNews = allNews.slice(10, 20);
+  
+  // The rest of the news for the main grid (from index 20 onwards, up to maybe 50 items to keep it clean, but since the user wants all news, we can show a good chunk, say up to 60)
+  const gridNews = allNews.slice(10, 100);
+
+  // Ticker gets top 10 recent
+  const tickerNews = allNews.slice(0, 10);
 
   return (
     <div className={styles.mainContent}>
       {/* 1. Ticker */}
-      <NewsTicker news={breakingNews} />
+      <NewsTicker news={tickerNews} />
 
       {/* 2. Classic Grid Layout (Main Content Left, Sidebar Right) */}
       <div className={styles.portalGrid}>
@@ -30,12 +36,12 @@ export default async function Home() {
           {/* Manşet (Hero) */}
           <HeroSlider news={heroNews} />
 
-          {/* Güncel Haberler Grid */}
+          {/* Tüm Haberler Grid */}
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionLeft}>
                 <div className={styles.accentBar} />
-                <h2 className={styles.sectionTitle}>GÜNCEL HABERLER</h2>
+                <h2 className={styles.sectionTitle}>TÜM HABERLER</h2>
               </div>
             </div>
             <div className={styles.newsGrid}>
@@ -44,52 +50,14 @@ export default async function Home() {
               ))}
             </div>
           </section>
-
-          {/* Üniversite & Evde Bakım Grid */}
-          {tipNews.length > 0 && (
-            <section className={styles.section}>
-              <div className={styles.sectionHeader}>
-                <div className={styles.sectionLeft}>
-                  <div className={styles.accentBar} />
-                  <h2 className={styles.sectionTitle}>Tıp & Bakım</h2>
-                </div>
-              </div>
-              <div className={styles.newsGrid}>
-                {tipNews.slice(0, 4).map(item => (
-                  <NewsCard key={item.id} item={item} />
-                ))}
-              </div>
-            </section>
-          )}
         </div>
 
         {/* Sidebar Column */}
         <aside className={styles.sidebarColumn}>
+          {/* Sidebar Widget: Latest News */}
+          <LatestNewsList items={sidebarNews} />
           
-          {/* Sidebar Widget 1: Categories */}
-          <div className={styles.categoryGrid}>
-            <a href="/kategori/evde-bakim" className={styles.categoryCard}>
-              <div className={styles.categoryIcon}>🏠</div>
-              <div className={styles.categoryLabel}>Evde Bakım</div>
-            </a>
-            <a href="/kategori/hastane" className={styles.categoryCard}>
-              <div className={styles.categoryIcon}>🏥</div>
-              <div className={styles.categoryLabel}>Hastane</div>
-            </a>
-            <a href="/kategori/universite" className={styles.categoryCard}>
-              <div className={styles.categoryIcon}>🎓</div>
-              <div className={styles.categoryLabel}>Üniversite</div>
-            </a>
-            <a href="/kategori/saglik" className={styles.categoryCard}>
-              <div className={styles.categoryIcon}>💊</div>
-              <div className={styles.categoryLabel}>Sağlık</div>
-            </a>
-          </div>
-
-          {/* Sidebar Widget 2: Latest News */}
-          <LatestNewsList items={latestNews} />
-          
-          {/* Sidebar Widget 3: Stats */}
+          {/* Sidebar Widget: Stats */}
           <div className={styles.statsBar}>
             <div className={styles.statsInner}>
               <div className={styles.statItem}>
@@ -102,7 +70,6 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          
         </aside>
 
       </div>

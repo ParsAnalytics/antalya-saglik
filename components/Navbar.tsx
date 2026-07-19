@@ -4,11 +4,7 @@ import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
-  { href: '/', label: 'Gündem' },
-  { href: '/kategori/saglik', label: 'Sağlık' },
-  { href: '/kategori/evde-bakim', label: 'Evde Bakım' },
-  { href: '/kategori/hastane', label: 'Hastane' },
-  { href: '/kategori/universite', label: 'Üniversite' },
+  { href: '/', label: 'Tüm Haberler' },
 ];
 
 export default function Navbar() {

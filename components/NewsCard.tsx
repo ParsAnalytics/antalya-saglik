@@ -9,34 +9,28 @@ interface Props {
   featured?: boolean;
 }
 
-const FALLBACK_IMAGES: Record<string, string> = {
-  teal: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23070c18' width='800' height='450'/%3E%3Ccircle cx='400' cy='200' r='80' fill='%2300d4b820'/%3E%3Ctext x='400' y='215' text-anchor='middle' fill='%2300d4b8' font-size='60' font-family='Arial'%3E🏥%3C/text%3E%3Ctext x='400' y='310' text-anchor='middle' fill='%2364748b' font-size='18' font-family='Arial'%3ESağlık Haberi%3C/text%3E%3C/svg%3E",
-  blue: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23070c18' width='800' height='450'/%3E%3Ccircle cx='400' cy='200' r='80' fill='%233b82f620'/%3E%3Ctext x='400' y='215' text-anchor='middle' fill='%233b82f6' font-size='60' font-family='Arial'%3E🔬%3C/text%3E%3Ctext x='400' y='310' text-anchor='middle' fill='%2364748b' font-size='18' font-family='Arial'%3ESağlık Haberi%3C/text%3E%3C/svg%3E",
-  purple: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23070c18' width='800' height='450'/%3E%3Ccircle cx='400' cy='200' r='80' fill='%238b5cf620'/%3E%3Ctext x='400' y='215' text-anchor='middle' fill='%238b5cf6' font-size='60' font-family='Arial'%3E💊%3C/text%3E%3Ctext x='400' y='310' text-anchor='middle' fill='%2364748b' font-size='18' font-family='Arial'%3ESağlık Haberi%3C/text%3E%3C/svg%3E",
-  orange: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23070c18' width='800' height='450'/%3E%3Ccircle cx='400' cy='200' r='80' fill='%23f9731620'/%3E%3Ctext x='400' y='215' text-anchor='middle' fill='%23f97316' font-size='60' font-family='Arial'%3E🎓%3C/text%3E%3Ctext x='400' y='310' text-anchor='middle' fill='%2364748b' font-size='18' font-family='Arial'%3EÜniversite Tıbbı%3C/text%3E%3C/svg%3E",
-};
-
 export default function NewsCard({ item, featured = false }: Props) {
-  const imgSrc = item.image || FALLBACK_IMAGES[item.categoryColor] || FALLBACK_IMAGES.teal;
 
   return (
     <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
-      <Link href={item.link} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
-        <div className={styles.imageWrap}>
-          <img
-            src={imgSrc}
-            alt={item.title}
-            className={styles.image}
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = FALLBACK_IMAGES[item.categoryColor] || FALLBACK_IMAGES.teal;
-            }}
-          />
-          <div className={styles.imageOverlay} />
-          <span className={`${styles.categoryBadge} badge badge-${item.categoryColor}`}>
-            {item.category}
-          </span>
-        </div>
-      </Link>
+      {item.image && (
+        <Link href={item.link} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
+          <div className={styles.imageWrap}>
+            <img
+              src={item.image}
+              alt={item.title}
+              className={styles.image}
+              onError={(e) => {
+                (e.target as HTMLElement).parentElement!.style.display = 'none';
+              }}
+            />
+            <div className={styles.imageOverlay} />
+            <span className={`${styles.categoryBadge} badge badge-${item.categoryColor}`}>
+              {item.category}
+            </span>
+          </div>
+        </Link>
+      )}
 
       <div className={styles.body}>
         <Link href={item.link} target="_blank" rel="noopener noreferrer">

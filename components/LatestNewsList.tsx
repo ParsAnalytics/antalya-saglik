@@ -23,7 +23,7 @@ export default function LatestNewsList({ items }: Props) {
               <img
                 src={item.image}
                 alt={item.title}
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                onError={(e) => { (e.target as HTMLElement).parentElement!.style.display = 'none'; }}
               />
             </div>
           )}

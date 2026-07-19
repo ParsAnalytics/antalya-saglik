@@ -51,8 +51,8 @@
 .contentOverlay {
   position: relative;
   z-index: 10;
-  background: linear-gradient(0deg, rgba(15, 23, 42, 0.8) 0%, transparent 100%);
-  padding: 40px 30px 20px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 50%, transparent 100%);
+  padding: 60px 40px 30px;
   width: 100%;
   color: #fff;
 }
@@ -82,7 +82,8 @@
   color: #fff;
 }
 .title a:hover {
-  color: var(--color-accent-purple); /* Light pastel blue hover */
+  color: var(--color-accent-blue);
+  text-decoration: underline;
 }
 
 /* Numbered Pagination */
@@ -98,7 +99,7 @@
   min-width: 40px;
   padding: 12px 0;
   text-align: center;
-  background: none;
+  background: #f8fafc;
   border: none;
   border-right: 1px solid var(--color-border);
   font-size: 1rem;
@@ -113,12 +114,12 @@
 }
 
 .pageBtn:hover {
-  background: var(--color-bg-primary); /* Pastel blue hover */
-  color: var(--color-accent-teal);
+  background: #e2e8f0;
+  color: var(--color-text-primary);
 }
 
 .pageBtn.active {
-  background: var(--color-accent-teal); /* Blue active */
+  background: var(--color-accent-teal);
   color: #fff;
   border-color: var(--color-accent-teal);
 }

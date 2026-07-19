@@ -2,18 +2,19 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #ffffff;
-  border-bottom: 2px solid var(--color-border);
-  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.05); /* Soft blue shadow */
+  background: var(--color-text-primary); /* Deep Slate 900 */
+  border-bottom: 4px solid var(--color-accent-teal); /* Royal Blue accent */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .topBar {
-  background: var(--color-bg-primary); /* Pastel blue */
-  color: var(--color-accent-teal); /* Deeper blue text */
-  padding: 6px 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-bottom: 1px solid var(--color-border);
+  background: #0b1120; /* Even darker shade for top bar */
+  color: #94a3b8; /* Slate 400 */
+  padding: 8px 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .topBarInner {
@@ -61,17 +62,16 @@
 }
 
 .logoIcon {
-  width: 44px;
-  height: 44px;
-  background: var(--color-accent-teal); /* Blue box */
-  color: #fff;
-  border-radius: var(--radius-md);
+  background: var(--color-accent-teal);
+  color: white;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
   font-size: 1.8rem;
-  box-shadow: 0 4px 10px var(--color-accent-blue-glow);
+  font-weight: 900;
+  border-radius: var(--radius-sm);
 }
 
 .logoText {
@@ -80,20 +80,19 @@
 }
 
 .logoTitle {
-  font-family: var(--font-heading);
   font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--color-text-primary);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .logoSubtitle {
-  font-size: 0.75rem;
-  color: var(--color-accent-teal);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  margin-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .navLinks {

@@ -350,10 +350,34 @@ export async function getAllNews(): Promise<NewsItem[]> {
       pubDate: new Date(Date.now() - 25200000).toISOString(),
       source: 'Ağız ve Diş',
       sourceLabel: 'Sağlık Rehberi',
-      category: 'Diş Hekimliği',
+      category: 'Diş Sağlığı',
       categoryColor: 'teal',
       image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80',
-    }
+    },
+    {
+      id: 'adv-yabanci-saglik-rehberi',
+      title: 'Türkiye\'deki Yabancılar İçin Tam Kapsamlı Sağlık İpuçları ve Acil Durum Rehberi',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Türkiye\'ye gelen turistler ve ikamet eden yabancılar için 112 Acil servis, nöbetçi eczaneler, seyahat sigortası ve İngilizce konuşan doktor bulma rehberi açıklandı.',
+      pubDate: new Date(Date.now() - 25200000).toISOString(),
+      source: 'Turist Sağlığı',
+      sourceLabel: 'Turist Sağlığı',
+      category: 'Yabancı Rehberi',
+      categoryColor: 'blue',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 'adv-turizm-saglik-sigortasi',
+      title: 'Türkiye Gezisinde Sağlık Koruması: Seyahat Sigortası ve 184 SABİM Hattı Kullanımı',
+      link: 'https://akdeniz-saglik-danismanligi.vercel.app#services',
+      description: 'Yabancı misafirlerin hastane seçimi, reçeteli ilaç alımı ve sağlık sigortası süreçlerinde bilmesi gereken altın kurallar sıralandı.',
+      pubDate: new Date(Date.now() - 28800000).toISOString(),
+      source: 'Sağlık Turizmi',
+      sourceLabel: 'Sağlık Turizmi',
+      category: 'Seyahat Sağlığı',
+      categoryColor: 'teal',
+      image: 'https://images.unsplash.com/photo-1551076805-e18690c5e561?auto=format&fit=crop&w=800&q=80',
+    },
   ];
 
   // Insert all 8 advertorials deeply mixed into the news feed

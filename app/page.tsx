@@ -1,6 +1,7 @@
 // app/page.tsx
 import { getAllNews } from '@/lib/newsService';
 import CustomHero from '@/components/CustomHero';
+import ForeignerHealthGuide from '@/components/ForeignerHealthGuide';
 import NewsTicker from '@/components/NewsTicker';
 import NewsCard from '@/components/NewsCard';
 import LatestNewsList from '@/components/LatestNewsList';
@@ -31,6 +32,9 @@ export default async function Home() {
 
       {/* Manşet (Custom Full-Width Hero) */}
       <CustomHero />
+
+      {/* Yabancılar İçin Sağlık Rehberi & İpuçları Section */}
+      <ForeignerHealthGuide />
 
       {/* 2. Classic Grid Layout (Main Content Left, Sidebar Right) */}
       <div className={styles.portalGrid}>

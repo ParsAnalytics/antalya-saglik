@@ -35,7 +35,6 @@ export default function Navbar() {
           <div className={styles.dropdown}>
             <span className={styles.navLink}>KATEGORİLER</span>
           </div>
-          <Link href="#health-guide" className={styles.navLink}>SAĞLIK REHBERİ (HEALTH TIPS)</Link>
           <Link href="#" className={styles.navLink}>İLETİŞİM</Link>
         </nav>
 
